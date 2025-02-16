@@ -11,3 +11,7 @@ wheels/
 
 # Environment Variable
 .env
+
+# Remove tracking of notebooks and their corresponding checkpoints
+*.ipynb_checkpoints/
+*.ipynb
