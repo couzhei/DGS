@@ -1,7 +1,7 @@
 from fastapi import FastAPI
-
 from fastapi.responses import Response
 
+from core import account_creation
 
 app = FastAPI()
 
@@ -15,4 +15,5 @@ async def read_root():
 @app.post("/create_account")
 async def create_account(username: str, password: str) -> Response:
     """Automates the process of Instagram account creation."""
+
     return {"username": username, "password": password}

@@ -8,10 +8,35 @@ import struct
 from datetime import date
 
 import requests
-from constants import SINGUP_URL
 from Crypto import Random
 from Crypto.Cipher import AES
 from nacl.public import PublicKey, SealedBox
+
+from core.constants import STANDARD_HEADERS
+
+
+def get_standard_header(custom_header: dict = None) -> dict:
+    """
+    Returns the standard Instagram headers. Optionally merges with custom headers.
+
+    Parameters:
+        custom_headers (dict): A dictionary of custom headers to add or override.
+
+    Returns:
+        dict: The final headers for the request.
+    """
+    headers = {
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36",
+        "Referer": "https://www.instagram.com/",
+        "X-Requested-With": "XMLHttpRequest",
+    }
+
+    headers.update(STANDARD_HEADERS)
+
+    if custom_header:
+        custom_header.update(headers)
+
+    return headers
 
 
 def get_instagram_encryption_data(session: requests.Session, url=None) -> dict:

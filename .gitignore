@@ -19,3 +19,5 @@ wheels/
 
 # Removing tracking of html files # TODO: Remove this if you want to track html files
 *.html
+
+account_creation.py
