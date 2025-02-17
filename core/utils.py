@@ -1,14 +1,17 @@
-import re
-import json
-import requests
 import base64
 import binascii
 import datetime
+import json
+import random
+import re
 import struct
+from datetime import date
+
+import requests
+from constants import SINGUP_URL
 from Crypto import Random
 from Crypto.Cipher import AES
 from nacl.public import PublicKey, SealedBox
-from constants import SINGUP_URL
 
 
 def get_instagram_encryption_data(session: requests.Session, url=None) -> dict:
@@ -82,3 +85,26 @@ def encrypt_password(password, key_id, public_key, version):
     )
     encrypted = base64.b64encode(encrypted).decode("utf-8")
     return f"#PWD_INSTAGRAM_BROWSER:{version}:{time}:{encrypted}"
+
+
+def generate_random_birthdate() -> dict:
+    """
+    Generates a random birthdate ensuring the person is between 18 and 60 years old,
+    as calculated from February 17, 2025. Returns a dictionary with keys 'day', 'month', and 'year'.
+
+    Returns:
+        dict: A dictionary containing a valid birthdate.
+    """
+    # Reference current date for eligibility (change if needed)
+    current_date = date.today()
+
+    # Calculate the earliest and latest eligible birthdates.
+    # Person must be at most 60 years old and at least 18 years old.
+    earliest = current_date.replace(year=current_date.year - 60)
+    latest = current_date.replace(year=current_date.year - 18)
+
+    # Convert dates to ordinal numbers (integers) and generate a random ordinal
+    random_ordinal = random.randint(earliest.toordinal(), latest.toordinal())
+    birth_date = date.fromordinal(random_ordinal)
+
+    return {"day": birth_date.day, "month": birth_date.month, "year": birth_date.year}

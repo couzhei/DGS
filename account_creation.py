@@ -62,7 +62,6 @@ headers = {
 }
 
 
-
 data = {
     "email": "ashkanmehravand@gmail.com",
     "failed_birthday_year_count": "{}",
@@ -119,7 +118,6 @@ input()
 session = requests.Session()
 response = session.get("https://www.instagram.com/accounts/emailsignup/")
 csrf_token = session.cookies.get("csrftoken")
-
 
 
 cookies = {
@@ -185,3 +183,10 @@ if attempt_response.json().get("dryrun_passed"):
     print(final_response.json())
 else:
     print("Validation failed.")
+
+
+# TODO:
+# We might need to send a request to both chec
+# https://www.instagram.com/api/v1/web/consent/check_age_eligibility/
+# https://www.instagram.com/api/v1/accounts/send_verify_email/
+# to make sure everything is intact!

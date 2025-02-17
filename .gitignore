@@ -15,3 +15,7 @@ wheels/
 # Remove tracking of notebooks and their corresponding checkpoints
 *.ipynb_checkpoints/
 *.ipynb
+
+
+# Removing tracking of html files # TODO: Remove this if you want to track html files
+*.html
