@@ -53,6 +53,18 @@ uv add <package-name>
 uv sync
 ```
 
+
+## 🚧 To-Dos
+
+- [ ] **Completion**: Finalize all core functionality.
+- [ ] **Writing Tests**: Develop comprehensive unit and integration tests.
+- [ ] **Linting and Formatting**: Set up and enforce code style standards.
+- [ ] **Containerization with Docker**: Create a Dockerfile and necessary configurations.
+- [ ] **CI/CD with GitHub Actions**: Automate builds, tests, and deployments.
+- [ ] **Writing Complete Documentation**: Prepare detailed usage and developer guides.
+- [ ] **Structuring Project**: Review and improve overall project architecture.
+
+
 <!-- ## 🤝 Contributing
 
 1. Fork the repository
