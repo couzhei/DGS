@@ -1,4 +1,4 @@
-# 🚀 DGS Project: Automation Initiative
+# ⚗️ DGS Project: Automation Initiative
 
 This project aims to streamline and automate the process of account creation through modern Python tooling.
 
@@ -22,6 +22,7 @@ This project aims to streamline and automate the process of account creation thr
    ```sh
    curl -LsSf https://astral.sh/uv/install.sh | sh
    ```
+   
 
 2. **Project Setup** 🏗️
 
@@ -29,6 +30,7 @@ This project aims to streamline and automate the process of account creation thr
    ```sh
    uv run -m fastapi run
    ```
+   And installation of packages will be taken care of as well as your running app.
 
 3. **Development Server** 💻
 
