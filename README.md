@@ -30,13 +30,13 @@ This project aims to streamline and automate the process of account creation thr
    ```sh
    uv run -m fastapi run
    ```
-   And installation of packages will be taken care of as well as your running app.
+   And installation of packages will be taken care of as well as running your app in the **production** mode.
 
 3. **Development Server** 💻
 
    Launch the FastAPI development server:
    ```sh
-   uv run -m fastapi run
+   uv run -m fastapi dev
    ```
 
 ## 📝 Managing Dependencies
